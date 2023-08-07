@@ -5,7 +5,8 @@ import de.cofinpro.calculator.view.DesktopCalculator;
 public class CalculatorController {
 
     public CalculatorController() {
-        var calculator = new DesktopCalculator();
-        calculator.addSolveButtonListener(new SolveButtonListener(calculator));
+        var buttonListener = new ButtonListener();
+        var calculator = new DesktopCalculator(buttonListener);
+        buttonListener.setCalculator(calculator);
     }
 }
